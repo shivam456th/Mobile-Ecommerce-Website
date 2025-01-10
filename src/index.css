@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.img:hover video{
+ opacity: 1;
+}
+
+.img:hover {
+    opacity: 0;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none; /* for Internet Explorer */
+    scrollbar-width: none; /* for Firefox */
+  }
+
+  /* Slider css  */
+
+  /* Hide the scrollbar */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
