@@ -48,7 +48,7 @@ const Slider = () => {
         <div className="slider-container max-w-[30rem] w-full">
           <SimpleImageSlider
             width="100%"
-            height={180} // Adjust height to maintain aspect ratio
+            height={300} // Adjust height to maintain aspect ratio
             images={images}
             showBullets={true}
             showNavs={true}

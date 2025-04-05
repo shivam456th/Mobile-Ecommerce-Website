@@ -8,6 +8,7 @@ const Store = ({ children }) => {
   const [PhoneCaseData, setPhoneCaseData] = useState([]);
   const [data, setData] = useState([]);
   const [Cart, setCart] = useState([]); // Corrected variable name to follow camelCase convention
+  const [searchInput, setsearchInput] = useState('');
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +26,7 @@ const Store = ({ children }) => {
       setPhoneCaseData(phoneCaseResponse.data);
     };
 
-    const fetchAmazonProData = async () => {
+    var fetchAmazonProData = async () => {
       const amazonProResponse = await instance.get("/amazonpro"); // Corrected variable name for clarity
       setData(amazonProResponse.data);
     };
@@ -36,6 +37,16 @@ const Store = ({ children }) => {
     fetchAmazonProData();
   }, []);
 
+  function search() {
+    let One = data.filter((e) => {
+      return e.title.toLowerCase().includes(searchInput.toLowerCase())
+    })
+    setData(One)
+  }
+
+  useEffect(() => {
+    search()
+  }, [searchInput])
 
 const addtocart = (item) => {
   setCart((prev)=>{
@@ -50,7 +61,7 @@ const addtocart = (item) => {
 
 
   return (
-    <Context.Provider value={{ PhoneData, WatchData, PhoneCaseData, data, addtocart, Cart, setCart}}>
+    <Context.Provider value={{ PhoneData, WatchData, PhoneCaseData, data, addtocart, Cart, setCart, searchInput,setsearchInput, search}}>
       {children}
     </Context.Provider>
   );

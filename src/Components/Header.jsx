@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "./Slider";
+import Carousel from "./Carousel.jsx";
 import PhoneCase from "./PhoneCase";
 import Card from "./Card";
 import instance from "./Utils/instance";
@@ -95,7 +95,7 @@ const Header = () => {
           </div>
 
           {/* Slider Section */}
-            <Slider />
+            <Carousel />
 
           {/* Watch Section */}
             <div className="md:px-14 px-2 py-5">

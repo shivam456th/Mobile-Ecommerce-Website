@@ -7,22 +7,27 @@ import { Link } from "react-router-dom";
 import { Context } from "../Store";
 
 const Navbar = () => {
-  const { Cart } = useContext(Context);
+  const { Cart, searchInput, setsearchInput,search} = useContext(Context);
+  console.log(searchInput);
+  
   return (
     <div className="flex py-4 md:px-10 px-2 items-center justify-between">
-      <img src={Logo} alt="Logo" className="w-10 h-10" />
+      <Link to='/'><img src={Logo} alt="Logo" className="w-10 h-10" /></Link>
       <div className=" items-center md:flex hidden">
         <input
           className="py-2 px-4 bg-[#E1E3E5] w-[35rem] rounded-full text-gray-700 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75"
           type="text"
+          value={searchInput}
+          onChange={(e)=>setsearchInput(e.target.value)}
           placeholder="Search product..."
         />
-        <button className="ml-4 py-2 px-4 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700 transition duration-300">
+        <button className="ml-4 py-2 px-4 bg-blue-500 text-white font-bold rounded-full hover:bg-blue-700 transition duration-300"
+        onClick={search}>
           Enter
         </button>
       </div>
       <div className="flex items-center text-black ">
-        <SlGlobe className=" text-2xl mr-4 cursor-pointer" />
+        <SlGlobe className=" text-2xl  cursor-pointer" />
         <Link to={"/addtocart"} className="relative flex items-center mx-2">
           {/* Shopping Cart Icon */}
           <CiShoppingCart className="text-2xl cursor-pointer text-gray-800 hover:text-gray-900 transition-colors duration-300" />
