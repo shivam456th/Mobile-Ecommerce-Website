@@ -7,7 +7,7 @@ import PhoneCase from "./Pages/PhoneSectionCase.jsx";
 import PhoneSectionCase from "./Pages/PhoneSectionCase.jsx";
 import Footer from "./Components/Footer.jsx";
 import WatchSection from "./Pages/WatchSection.jsx";
-import Axosories from "./Pages/axosories.jsx";
+import Axosories from "./Pages/Axosories.jsx";
 import SinglePage from "./Components/SinglePage.jsx";
 import Apple from "./Pages/Apple.jsx";
 import Samsung from "./Pages/Samsung.jsx";
